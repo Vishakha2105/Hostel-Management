@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hostel Booking Form</title>
+
+
+    <style>
+        body {
+            background-image: url('school-3.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #formContainer {
+            background-color: rgba(173, 216, 230, 0.6);
+            padding: 200px 100px;
+            border-radius: 10px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-right: 10px;
+            text-align: right;
+            font-size: 1.1rem;
+        }
+
+        input,
+        select {
+            display: inline-block;
+            width: 200px;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            padding: 5px;
+
+        }
+
+        h1,
+
+        b {
+            font-size: 4rem;
+            color: #333;
+            /* Text color: Dark gray */
+        }
+
+        button[type="submit"] {
+            float: inherit;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 85px;
+            border-radius: 50px;
+            display: inline-block;
+            border: 0;
+            outline: 0;
+            box-shadow: 0px 4px 10px 0px #2f32eea6;
+            background-image: linear-gradient(100deg, #3460cf 10%, #4a28c6 100%);
+        }
+
+
+        /* Style the dashboard container */
+        .dashboard {
+            display: flex;
+            height: 100%;
+        }
+
+        /* Style the sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #fff;
+            color: #fff;
+        }
+
+        /* Style the content area */
+        .content {
+            flex: 1;
+            padding: 1px;
+            padding: 1px;
+            font-size: 200px;
+            /* Adjust the font size as needed */
+        }
+
+        .logo {
+
+            color: rgb(11, 119, 234);
+
+            font-size: 25px;
+
+        }
+
+
+
+        nav ul {
+
+            margin: 0%;
+
+            padding: 0%;
+
+            float: right;
+
+            margin-right: 50px;
+
+            margin-top: 10px;
+
+
+
+        }
+
+
+
+        nav ul li {
+
+            display: inline-block;
+
+            line-height: 80px;
+
+
+
+        }
+
+
+
+        nav ul li a {
+
+            text-decoration: none;
+
+            color: white;
+
+            font-size: 27px;
+
+            padding: 7px 13px;
+
+            border-radius: 3px;
+
+            margin: 0 5px;
+
+        }
+
+
+        .sidebar {
+            background-color: #333;
+            color: #fff;
+            min-width: 250px;
+            padding: 20px;
+            height: 110%;
+        }
+
+
+        .sidebar-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            height: 150px;
+            /* Set the height of the sidebar header */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+
+        }
+
+        .sidebar li {
+            margin-bottom: 30px;
+            /* Add a gap between list items */
+            font-size: 20px;
+            border-bottom: 2px solid #007BFF;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #fff;
+            /* Change the color of the hyperlinks */
+            font-weight: bold;
+        }
+
+        .sidebar-header img {
+            width: 200px;
+            /* Adjust the width of the image as needed */
+            height: auto;
+            /* Maintain the aspect ratio */
+        }
+
+        .contact-info {
+            text-align: left;
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            font-size: 20px;
+        }
+
+        .contact-info p {
+            font-weight: bold;
+        }
+    </style>
+
+
+<body>
+
+
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="your-image.jpg" alt="Sidebar Logo">
+            </div>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="form3.html">Hostel Booking</a></li>
+                <li><a href="leave.html">Leave Application</a></li>
+                <li><a href="login5.html">Logout</a></li>
+            </ul>
+            <div class="contact-info">
+                <p>Contact Us: 9056874397</p>
+                <a
+                    href="https://engineering-shirpur.nmims.edu/about-mpstme/infrastructure/hostel/">nmims.hostel@gmail.com</a>
+
+            </div>
+        </div>
+
+
+
+    </div>
+    <div id="formContainer">
+        <h1>Hostel Booking</h1>
+
+        <form action="connect.php" method="post" id="bookingForm" onsubmit="submitForm(event)">
+            <h2>Room Selection</h2>
+            <label for="roomNumber">Room Number:</label>
+            <select id="roomNumber" name="roomNumber" required>
+                <option value="">Select a room</option>
+                <option value="101">Room 101</option>
+                <option value="102">Room 102</option>
+                <option value="103">Room 103</option>
+                <option value="104">Room 104</option>
+                <option value="105">Room 105</option>
+                <option value="106">Room 106</option>
+                <option value="107">Room 107</option>
+                <option value="108">Room 108</option>
+                <option value="109">Room 109</option>
+                <option value="110">Room 110</option>
+                <option value="111">Room 111</option>
+                <option value="112">Room 112</option>
+                <option value="113">Room 113</option>
+                <option value="114">Room 114</option>
+                <option value="115">Room 115</option>
+                <option value="116">Room 116</option>
+                <option value="201">Room 201</option>
+                <option value="202">Room 202</option>
+                <option value="203">Room 203</option>
+                <option value="204">Room 204</option>
+                <option value="205">Room 205</option>
+                <option value="206">Room 206</option>
+                <option value="207">Room 207</option>
+                <option value="208">Room 208</option>
+                <option value="209">Room 209</option>
+                <option value="210">Room 210</option>
+                <option value="211">Room 211</option>
+                <option value="212">Room 212</option>
+                <option value="213">Room 213</option>
+                <option value="214">Room 214</option>
+                <option value="215">Room 215</option>
+
+            </select>
+
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+
+            <h2>Student Details</h2>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male" name="gender" value="m">Male</option>
+                <option value="female" name="gender" value="f">Female</option>
+                <option value="other" name="gender" value="o">Other</option>
+            </select>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+            <h2>Parent's Details</h2>
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+
+            <label for="motherName">Mother's Name:</label>
+            <input type="text" id="motherName" name="motherName" required>
+
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" required>
+
+            <label for="homeAddress">Home Address:</label>
+            <input type="text" id="homeAddress" name="homeAddress" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+
+            <label for="postalCode">Postal Code:</label>
+            <input type="text" id="postalCode" name="postalCode" required>
+            <br>
+            <center><button type="submit">Submit</button></center>
+        </form>
+
+
+        </script>
+</body>
+
+</html>

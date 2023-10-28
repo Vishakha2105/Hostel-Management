@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="leaveApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Hostel Leave Application</title>
+    <style>
+        .form-box {
+    flex: 1;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    position: relative;
+}
+#formContainer {
+            background-color: rgba(173, 216, 230, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+body {
+
+background-image: url('school-3.jpg');
+
+
+background-size: cover;
+
+background-repeat: no-repeat;
+
+}
+input,
+select {
+    display: inline-block;
+    width: 200px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    padding: 5px;
+
+}
+.white-box {
+    background-color: rgba(160,229,252,0.6);
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 500px;
+    margin: 0 auto;
+}
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+textarea {
+    width: 50%;
+    padding: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+        </style>
+</head>
+<body>
+<body ng-controller="leaveController as leaveCtrl">
+    
+    <center>
+    <h1>Hostel Leave Application</h1>
+    <div class="white-box">
+    <form action="leave1.php" method="POST" name="leaveForm" ng-submit="leaveCtrl.submitForm()" novalidate>
+        <div class="form-group">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" name="studentName" ng-model="leaveCtrl.formData.studentName" required>
+            <span class="error" ng-show="leaveForm.studentName.$error.required && leaveForm.studentName.$touched">Student Name is required.</span>
+        </div>
+        <div class="form-group">
+            <label for="parentName">Parent Name:</label>
+            <input type="text" id="parentName" name="parentName" ng-model="leaveCtrl.formData.parentName" required>
+            <span class="error" ng-show="leaveForm.parentName.$error.required && leaveForm.parentName.$touched">Parent Name is required.</span>
+        </div>
+        <div class="form-group">
+            <label for="studentContact">Student Contact Number:</label>
+            <input type="tel" id="studentContact" name="studentContact" ng-model="leaveCtrl.formData.studentContact" required pattern="\d{10}">
+            <span class="error" ng-show="leaveForm.studentContact.$error.required && leaveForm.studentContact.$touched">Student Contact Number is required.</span>
+            <span class="error" ng-show="leaveForm.studentContact.$error.pattern && leaveForm.studentContact.$touched">Invalid Contact Number.</span>
+        </div>
+        <div class="form-group">
+            <label for="parentContact">Parent Contact Number:</label>
+            <input type="tel" id="parentContact" name="parentContact" ng-model="leaveCtrl.formData.parentContact" required pattern="\d{10}">
+            <span class="error" ng-show="leaveForm.parentContact.$error.required && leaveForm.parentContact.$touched">Parent Contact Number is required.</span>
+            <span class="error" ng-show="leaveForm.parentContact.$error.pattern && leaveForm.parentContact.$touched">Invalid Contact Number.</span>
+        </div>
+        <div class="form-group">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" ng-model="leaveCtrl.formData.startDate" required>
+            <span class="error" ng-show="leaveForm.startDate.$error.required && leaveForm.startDate.$touched">Start Date is required.</span>
+        </div>
+        <div class="form-group">
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" ng-model="leaveCtrl.formData.endDate" required>
+            <span class="error" ng-show="leaveForm.endDate.$error.required && leaveForm.endDate.$touched">End Date is required.</span>
+        </div>
+        <div class="form-group">
+            <label for="timing">Timing of Leave:</label>
+            <input type="text" id="timing" name="timing" ng-model="leaveCtrl.formData.timing" required>
+            <span class="error" ng-show="leaveForm.timing.$error.required && leaveForm.timing.$touched">Timing of Leave is required.</span>
+        </div><br>
+        <div class="form-group">
+            <label for="reason">Reason for Leave:</label>
+            <textarea id="reason" name="reason" ng-model="leaveCtrl.formData.reason" required></textarea>
+            <span class="error" ng-show="leaveForm.reason.$error.required && leaveForm.reason.$touched">Reason for Leave is required.</span>
+        </div>
+        <button type="submit" value="submit" ng-disabled="leaveForm.$invalid">Submit</button>
+    </form>
+</div>
+
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="app.js"></script>
+</html>
